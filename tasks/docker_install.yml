@@ -1,6 +1,6 @@
 ---
 - name: python install
-  raw: apt install python
+  raw: printf '%s\n' 'Y' | apt install python > /dev/null 2>&1
 
 - name: Install aptitude packages
   apt:
@@ -23,7 +23,6 @@
     - gnupg-agent
     - software-properties-common
     - python-pip
-    #update_cache: true
     state: latest
 
 - name: Official GPG docker key
@@ -41,15 +40,15 @@
     name: docker-ce
     state: latest
 
-- name: Install docker
+- name: Install Docker
   pip:
     name: docker
 
-- name: Start Docker service
+- name: Start and enable grafana service
   service:
     name: docker
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Check if Docker is up and running
   command: systemctl status docker
