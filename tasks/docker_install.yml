@@ -35,7 +35,7 @@
     repo: deb https://download.docker.com/linux/ubuntu bionic stable
     state: present
 
-- name: Get and Install Docker Compose
+- name: Install Docker Compose
   get_url:
     url: "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64"
     dest: /usr/bin/docker-compose
