@@ -1,0 +1,22 @@
+- name: Install Node.js
+  apt:
+    pkg:
+      - nodejs
+      - npm
+    state: latest
+
+- name: Install Express
+  command: npm install express --save
+
+- name: Configure node_app.js
+  lineinfile:
+    path: /app/node/node_app.js
+    create: true
+    line: |-
+      var app = express();
+      app.get('/', function (req, res) {
+          res.send('Hello World!');
+      });
+      app.listen(3000, function () {
+          console.log('Example app listening on port 3000!');
+      });
