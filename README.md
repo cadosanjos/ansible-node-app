@@ -6,7 +6,7 @@ This role installs the pre-req for ansible, docker, prometheus and grafana. The 
 Requirements
 ------------
 
-Ubuntu bionic64
+Ubuntu
 
 Role Variables
 --------------
