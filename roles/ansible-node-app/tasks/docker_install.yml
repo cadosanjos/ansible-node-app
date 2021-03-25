@@ -1,6 +1,6 @@
 ---
 - name: python install
-  raw: printf '%s\n' 'Y' | apt install python > /dev/null 2>&1
+  raw: printf '%s\n' 'Y' | apt install python3 > /dev/null 2>&1
 
 - name: Install aptitude packages
   apt:
@@ -22,7 +22,7 @@
     - curl
     - gnupg-agent
     - software-properties-common
-    - python-pip
+    - python3-pip
     state: latest
 
 - name: Official GPG docker key
